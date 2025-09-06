@@ -326,25 +326,23 @@ class WordListAdapter : ListAdapter<Word, WordViewHolder>(WordDiffCallback()) {
 
 ```kotlin
 class WordListAdapter :
-    ListAdapter<Word, WordListAdapter.WordViewHolder>(WordDiffCallback()) {
+    ListAdapter<Word, WordListAdapter.VH>(WordDiffCallback()) {
 
-    inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val wordItemView: TextView = itemView.findViewById(R.id.textView)
-        fun bind(text: String) { wordItemView.text = text }
+    inner class VH(v: View) : RecyclerView.ViewHolder(v) {
+        private val tv: TextView = v.findViewById(R.id.textView)
+        fun bind(w: Word) { tv.text = w.word }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recyclerview_item, parent, false)
-        return WordViewHolder(view)
-    }
+    override fun onCreateViewHolder(p: ViewGroup, vType: Int) =
+        VH(LayoutInflater.from(p.context).inflate(R.layout.recyclerview_item, p, false))
 
-    override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
-        val currentWord = getItem(position)
-        holder.bind(currentWord.word)
-    }
+    override fun onBindViewHolder(h: VH, pos: Int) = h.bind(getItem(pos))
 }
 ```
+
+
+
+
 
 ---
 
