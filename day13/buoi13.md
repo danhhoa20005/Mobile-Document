@@ -57,10 +57,7 @@ SQLite và MySQL đều là **hệ quản trị cơ sở dữ liệu quan hệ m
 
 **MySQL** thích hợp cho: **ứng dụng nhiều người dùng, hệ thống phân tán, cơ sở dữ liệu lớn, ứng dụng web, thương mại điện tử, blog, website >100 lượt/ngày**.
 
----
-Hiểu rồi 👍. Mình sẽ viết lại phần **Room Database – Cách tạo Room Database trong Android** theo đúng cấu trúc bạn đưa, chi tiết đầy đủ, có code + giải thích từng bước, giữ format theo **2.1, 2.2, B1, B2,… B5** để bạn dễ dùng làm tài liệu.
 
----
 
 ## 2. Room Database - Cách tạo Room Database trong Android
 
